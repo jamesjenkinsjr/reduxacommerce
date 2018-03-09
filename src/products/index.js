@@ -1,3 +1,5 @@
+import * as types from './types';
+
 const initialState = [
     {
         imgSource: 'https://via.placeholder.com/100x100',
@@ -21,7 +23,7 @@ const initialState = [
 
 const reducer = (state=initialState, action) => {
     switch(action.type) {
-        case "ADD_ITEM": {
+        case types.ADD_ITEM: {
             const position = action.payload.value;
             const selectedItem = state[position];
             const before = state.slice(0, position);
@@ -36,7 +38,7 @@ const reducer = (state=initialState, action) => {
                 ...after
             ];
         }
-        case "REMOVE_ITEM": {
+        case types.REMOVE_ITEM: {
             const position = action.payload.value;
             const selectedItem = state[position];
             const before = state.slice(0, position);
