@@ -2,12 +2,14 @@ import React, { Component } from 'react';
 import './App.css';
 import { connect } from 'react-redux';
 import ProductList from './ProductList';
+import SearchBar from './SearchBar';
 
 class App extends Component {
   render() {
     return (
       <div>
         <h1>Swag Shack</h1>
+        <SearchBar/>
         <ProductList products={this.props.products}/>
 
       </div>
