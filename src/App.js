@@ -10,7 +10,7 @@ class App extends Component {
       <div>
         <h1>Swag Shack</h1>
         <SearchBar/>
-        <ProductList products={this.props.products}/>
+        <ProductList searchTerm={this.props.search} products={this.props.products}/>
 
       </div>
     );
