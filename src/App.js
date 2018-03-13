@@ -2,6 +2,8 @@ import React, { Component } from 'react';
 import './App.css';
 import { connect } from 'react-redux';
 import ProductList from './ProductList';
+import CartIcon from './CartIcon';
+import CartList from './CartList';
 import SearchBar from './SearchBar';
 
 class App extends Component {
@@ -10,7 +12,10 @@ class App extends Component {
       <div>
         <h1>Swag Shack</h1>
         <SearchBar/>
-        <ProductList searchTerm={this.props.search} products={this.props.products}/>
+        <CartIcon />
+        {this.props.cart === true 
+        ? <ProductList searchTerm={this.props.search} products={this.props.products}/>
+        : <CartList/>}
 
       </div>
     );
